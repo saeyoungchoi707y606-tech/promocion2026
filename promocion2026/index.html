@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07060a">
+  <title>Promoción 2026 · 6.° B</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <div class="fondo"></div>
+  <canvas id="fx"></canvas>
+  <div id="globos"></div>
+
+  <!-- Cabecera tipo historias -->
+  <header id="cabecera" class="cabecera oculto">
+    <div class="barras" id="barras"></div>
+    <div class="perfil">
+      <div class="avatar">🎓</div>
+      <div class="datos">
+        <b>promocion2026_6b
+          <svg class="check" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="11" fill="#1d9bf0"/>
+            <path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </b>
+        <small>I.E. “Señor de Agonía” · Paucarbamba</small>
+      </div>
+      <button id="btn-musica" class="icono">🔊</button>
+    </div>
+  </header>
+
+  <main id="escenario">
+
+    <!-- 0: Sobre -->
+    <section class="pantalla activa" id="pantalla-sobre">
+      <p class="chico">Tienes una invitación</p>
+      <div class="sobre tilt" id="sobre">
+        <div class="sobre-carta">
+          <span>PROMOCIÓN</span>
+          <strong>2026</strong>
+        </div>
+        <div class="sobre-frente"></div>
+        <div class="sobre-solapa"></div>
+      </div>
+      <p class="toca">Toca el sobre para abrir</p>
+    </section>
+
+    <!-- 1: Portada -->
+    <section class="pantalla" id="pantalla-portada">
+      <p class="chico">Promoción 2026 · 6.° “B”</p>
+      <button class="birrete"><span>🎓</span></button>
+      <h1>Nuestra graduación</h1>
+      <h2>I.E. N.º 30958<br>“Señor de Agonía”</h2>
+      <p class="chico">Paucarbamba</p>
+      <span class="celans">CELANS</span>
+      <p class="lema" id="lema" data-texto="Con el esfuerzo lograremos alcanzar nuestros sueños"></p>
+    </section>
+
+    <!-- 2: Integrantes (créditos) -->
+    <section class="pantalla" id="pantalla-integrantes">
+      <h2>Integrantes</h2>
+      <p class="chico">Promoción 6.° “B”</p>
+      <div class="creditos"><ul id="lista-integrantes"></ul></div>
+      <div class="firmas">
+        <p><strong>Lic. Leonidas Tucta Valenzuela</strong><br><small>Asesor / Tutor</small></p>
+        <p><strong>Mag. Yurida Quispe Navarro</strong><br><small>Directora</small></p>
+      </div>
+    </section>
+
+    <!-- 3: Recuerdos -->
+    <section class="pantalla" id="pantalla-recuerdos">
+      <h2>Nuestros recuerdos</h2>
+      <div class="marco tilt">
+        <div class="fotos" id="fotos"></div>
+        <div class="brillo"></div>
+      </div>
+      <p class="contador" id="contador"></p>
+      <p class="frase">Este logro es gracias a Dios, mi esfuerzo y al apoyo de mis seres queridos y docentes.</p>
+    </section>
+
+    <!-- 4: Gracias -->
+    <section class="pantalla" id="pantalla-gracias">
+      <button class="birrete"><span>🎓</span></button>
+      <p class="frase">Gracias a todos los que estuvieron presentes y nos ayudaron a llegar hasta aquí</p>
+      <div class="linea"></div>
+      <p class="frase">Hoy cerramos una etapa que quedará para siempre en nuestros recuerdos y abrimos las puertas a nuevos sueños, retos y metas</p>
+    </section>
+
+    <!-- 5: Invitación -->
+    <section class="pantalla" id="pantalla-invitacion">
+      <p class="chico">Te invitamos a celebrar</p>
+      <h1>Nuestra fiesta de promoción</h1>
+      <span class="celans">CELANS</span>
+
+      <div class="rasca" id="rasca">
+        <div class="detalles">
+          <p class="dia">Miércoles</p>
+          <p class="num">02</p>
+          <p class="mes">de diciembre · 6:00 PM</p>
+          <p class="lugar">Gras sintético Zurdo de Oro<br>Huaytapallana – Paucarbamba</p>
+          <p class="chico">Amenizan: Elmercito Corazón</p>
+        </div>
+        <canvas id="rasca-cv"></canvas>
+      </div>
+      <p class="pista" id="pista">✨ Rasca para descubrir la fecha</p>
+
+      <div class="cuenta" id="cuenta">
+        <div><span id="c-dias">00</span><small>días</small></div>
+        <div><span id="c-horas">00</span><small>horas</small></div>
+        <div><span id="c-min">00</span><small>min</small></div>
+        <div><span id="c-seg">00</span><small>seg</small></div>
+      </div>
+
+      <button id="btn-celebrar" class="boton">🎉 ¡A celebrar!</button>
+    </section>
+
+  </main>
+
+  <!-- Pie -->
+  <footer id="pie" class="pie oculto">
+    <p class="hint">Mantén presionado para pausar</p>
+    <div class="acciones">
+      <button id="btn-corazon" class="icono">❤️</button>
+      <button id="btn-compartir" class="icono">📤</button>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <audio id="musica" src="audio/musica.mp3" loop></audio>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
